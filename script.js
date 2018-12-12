@@ -7,7 +7,7 @@ window.onload=function(){
 		c.resize(document.documentElement.clientWidth, document.documentElement.clientHeight);
 	}
 
-	c. background();
+	c.background();
 	c.c.lineWidth=1;
 	c.ele.addEventListener('mousedown',function(){
 		pMouseX=mouseX;
