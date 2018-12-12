@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>drawingCanvas</title>
+
+		<style>
+			body {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				background: white;
+			}
+			#c{
+				position: fixed;
+			}
+			#toolbar {
+				position: fixed;
+				right: 1%;
+				top: 1%;
+				border-right: 3px solid black;
+				border-left: 3px solid black;
+				text-align: center;
+				font-family: monospace, sans-serif;
+			}
+			button:hover{background: white;}
+			button:active{background: grey}
+			button:focus{outline:none;}
+			button, input{
+				user-select: none;
+				display: block;
+				border: 1px solid black;
+				margin: 2px;
+				border-radius: 25%;
+				padding: 0;
+			}
+
+			button i, input i{
+				user-select: none;
+				margin: 5px;
+				border-radius: 25%;
+			}
+		</style>
+		<script src="https://scoutchorton.github.io/simpleCanvas/simpleCanvas.min.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="./script.js"></script>
+		<script src="./jscolor.js"></script>
+	</head>
+	<body>
+		<canvas id="c"></canvas>
+		<div id="toolbar">
+			<button id="clear" onclick="canvClear()"><i class="material-icons">clear</i></button>
+			<button id="save" onclick="savePicture()"><i class="material-icons">save</i></button>
+			<button id="bigger" onclick="penBigger()"><i class="material-icons">add</i></button>
+			<div id="penSize"></div>
+			<button id="smaller" onclick="penSmaller()"><i class="material-icons">remove</i></button>
+			<button id="color"  class="jscolor" data-jscolor="{valueElement:colorVal, styleElement:colorStyle, onFineChange:'updateFill(this)'}" onclick="penColor()"><i id="colorStyle" class="material-icons">border_color</i></button>
+			<input id="colorVal" style="display: none;">
+			<button id="fullscreen" onclick="toggleFullscreen()"><i id="fullscreenIcon" class="material-icons">fullscreen</i></button>
+		</div>
+	</body>
+</html>
