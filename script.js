@@ -31,7 +31,6 @@ window.onload=function(){
 		a.href=c.ele.toDataURL('image/png');
 		a.download='drawingCanvas_output_' + (new Date().toLocaleTimeString().split(' ').join('_').split(':').join('_')) + '.png';
 		a.click();
-		console.log(c.ele.toDataURL("image/png"));
 	}
 	window.penBigger = function(){
 		c.c.lineWidth+=1;
@@ -45,9 +44,6 @@ window.onload=function(){
 		document.getElementById('color').jscolor.show();
 	}
 	window.updateFill=function(z){
-		console.log(z);
-		console.log(document.getElementById('colorStyle').style.backgroundColor);
-		console.log(z.rgb[0], z.rgb[1], z.rgb[2]);
 		c.stroke(z.rgb[0], z.rgb[1], z.rgb[2]);
 		document.getElementById('toolbar').style.borderLeft="3px solid " + document.getElementById('colorStyle').style.backgroundColor;
 		document.getElementById('toolbar').style.borderRight="3px solid " + document.getElementById('colorStyle').style.backgroundColor;
